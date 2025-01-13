@@ -40,4 +40,8 @@ class BasePage:
         element.clear()
         element.send_keys(keys)
 
+    @allure.step('Ожидание появление в названии сайта Дзен')
+    def wait_loading_dzen(self):
+        WebDriverWait(self.driver, 10).until(EC.title_contains("Дзен"))
+
 
