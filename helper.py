@@ -1,4 +1,3 @@
-from faker.contrib.pytest.plugin import faker
 from faker import Faker
 import random
 

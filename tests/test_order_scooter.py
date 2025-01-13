@@ -62,11 +62,10 @@ class TestOrder:
         order_scooter.wait_page_order()
         order_scooter.click_on_logo_yandex()
 
-        handles = driver.window_handles
-        driver.switch_to.window(handles[-1])
+        order_scooter.switch_window()
         order_scooter.wait_loading_dzen()
 
-        current_url = driver.current_url
+        current_url = order_scooter.get_url_of_page()
 
         assert current_url == main_page_dzen
 

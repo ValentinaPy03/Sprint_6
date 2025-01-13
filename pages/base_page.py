@@ -44,4 +44,13 @@ class BasePage:
     def wait_loading_dzen(self):
         WebDriverWait(self.driver, 10).until(EC.title_contains("Дзен"))
 
+    @allure.step('Проверить url страницы')
+    def get_url_of_page(self):
+        current_url = self.driver.current_url
+        return current_url
+
+    @allure.step('Переключиться на последнюю открытую вкладку')
+    def switch_window(self):
+        handles = self.driver.window_handles
+        self.driver.switch_to.window(handles[-1])
 
